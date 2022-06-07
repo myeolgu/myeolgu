@@ -1,0 +1,1382 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'Ygodic310';
+            src: url("font/y310.otf") format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Ygodic320';
+            src: url('font/y320.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Ygodic330';
+            src: url('font/y330.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Ygodic340';
+            src: url('font/y340.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Ygodic350';
+            src: url('font/y350.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Ygodic360';
+            src: url('font/y360.otf') format('opentype');
+        }
+
+        .black_box {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 100;
+            display: none;
+            background-color: rgba(0, 0, 0,0.8);
+            cursor: pointer;
+        }
+
+        .spao {
+            width: 1366px;
+            height: 768px;
+            background-color: white;
+            z-index: 111;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+            .spao > img:last-child {
+                position: fixed;
+                top: 40px;
+                right: 38px;
+                display: none;
+                cursor: pointer;
+            }
+
+        .men {
+            width: 1366px;
+            height: 768px;
+            background-color: white;
+            z-index: 111;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+            .men > img {
+                position: relative;
+                display: block;
+                float: left;
+            }
+
+
+        .women {
+            width: 1366px;
+            height: 768px;
+            background-color: white;
+            z-index: 111;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+            .women > img {
+                position: relative;
+                display: block;
+                float: left;
+            }
+
+
+        .bag {
+            width: 1366px;
+            height: 768px;
+            background-color: white;
+            z-index: 111;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+            .bag > img {
+                position: relative;
+                display: block;
+                float: left;
+            }
+
+
+        .info {
+            position: absolute;
+            margin-top: 52px;
+            margin-left: 5px;
+            width: 50px;
+        }
+
+        .number_1 {
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            margin-top: 15px;
+            line-height: 40px;
+            margin-left: 33px;
+        }
+
+            .number_1 ul {
+                list-style: none;
+                font-size: 24px;
+                font-family: Ygodic330;
+            }
+
+            .number_1 > ul > li {
+                position: absolute;
+                display: inline;
+            }
+
+            .number_1 img {
+                position: absolute;
+                display: block;
+                margin-top: 5px;
+                left: 5px;
+            }
+
+            .number_1 > ul > li:nth-child(2) {
+                display: none;
+            }
+
+            .number_1 > ul > li:nth-child(3) {
+                display: none;
+            }
+
+        .circle {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin-top: 90px;
+        }
+
+            .circle ul {
+                text-align: center;
+                margin: 0 auto;
+                width: 100px;
+                height: 20px;
+            }
+
+            .circle > ul > li {
+                width: 12px;
+                height: 12px;
+                display: inline-block;
+                background-color: black;
+                border-radius: 100px;
+                cursor: pointer;
+            }
+
+
+                .circle > ul > li:nth-child(2) {
+                    background-color: #eaeaea;
+                    width: 11px;
+                    height: 11px;
+                    border: 1px solid #c1c1c1;
+                }
+
+                .circle > ul > li:nth-child(3) {
+                    background-color: #eaeaea;
+                    width: 11px;
+                    height: 11px;
+                    border: 1px solid #c1c1c1;
+                }
+
+
+        .info_right {
+            position: absolute;
+            margin-top: 47px;
+            margin-left: 70px;
+            width: 300px;
+            height: 420px;
+            color: #979797;
+            font-family: Ygodic330;
+            font-size: 14px;
+        }
+
+            .info_right > b3 {
+                color: black;
+                font-size: 33px;
+                font-family: Ygodic350;
+            }
+
+            .info_right > b2 {
+                font-size: 21px;
+                color: black;
+                font-family: Ygodic330;
+            }
+
+            .info_right > p {
+                font-size: 14px;
+                color: black;
+                display: inline-block;
+                font-family: Ygodic330;
+            }
+
+            .info_right > b1 {
+                position: absolute;
+                margin-top: -5px;
+                color: black;
+                font-size: 33px;
+                font-family: Ygodic350;
+            }
+
+        .buy {
+            position: relative;
+            display: inline-block;
+            width: 164px;
+            height: 45px;
+            background-color: red;
+            margin-top: 500px;
+            margin-left: 50px;
+            font-family: Ygodic320;
+            font-size: 12px;
+            color: white;
+            text-align: center;
+            line-height: 45px;
+            cursor: pointer;
+        }
+
+        .basket {
+            position: absolute;
+            display: inline-block;
+            margin-top: 500px;
+            margin-left: 4px;
+            border: 1px solid #d6d6d6;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+
+        .close {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 3.5%;
+            right: 15%;
+            cursor: pointer;
+        }
+
+            .close img {
+                width: 100%;
+                height: 100%;
+            }
+
+        .basket > img {
+            position: relative;
+            display: block;
+            top: 50%;
+            left: 49%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+        }
+
+        .event_poto {
+            position: relative;
+            width: 264px;
+            height: 107px;
+            margin-top: 56px;
+            margin-left: 50px;
+            background-color: #d6d6d6;
+            font-family: Ygodic330;
+            font-size: 20px;
+            cursor: pointer;
+            line-height: 107px;
+        }
+
+            .event_poto > img {
+                position: absolute;
+                margin-top: 32px;
+                margin-left: 27px;
+                width: 40px;
+                height: 40px;
+            }
+
+        .like {
+            position: absolute;
+            display: inline-block;
+            margin-top: 500px;
+            margin-left: 53px;
+            border: 1px solid #d6d6d6;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+        }
+
+            .like > img {
+                position: relative;
+                display: block;
+                width: 30px;
+                height: 30px;
+                top: 50%;
+                left: 49%;
+                transform: translate(-50%, -50%);
+            }
+
+        .img_slide {
+            position: relative;
+            top: 50%;
+            transform: translate(0%,-50%);
+            width: 100%;
+            height: 588px;
+            overflow: hidden;
+        }
+
+        .nav {
+            list-style: none;
+            width: 400px;
+            height: 574px;
+        }
+
+
+            .nav > li {
+                position: absolute;
+                transition: all 0.8s;
+            }
+
+                .nav > li:nth-child(2) {
+                    margin-left: 400px;
+                }
+
+                .nav > li:nth-child(3) {
+                    margin-left: 800px;
+                }
+
+
+        .text_box {
+            position: relative;
+            margin-top: -16px;
+            margin-left: 50px;
+            display: block;
+            width: 165px;
+            height: 18px;
+            border: 1px solid #d5d5d5;
+            font-size: 11px;
+            cursor: pointer;
+            line-height: 18px;
+        }
+
+        .none {
+            position: relative;
+            margin-top: 2px;
+            display: inline-block;
+            width: 46px;
+            height: 10px;
+        }
+
+        .size_box {
+            position: relative;
+            display: inline-block;
+            margin-top: 3px;
+            width: 30px;
+            height: 11px;
+            border: 1.5px solid #d5d5d5;
+            font-size: 11px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .color_box {
+            position: relative;
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            margin-top: 3px;
+            border: 1.5px solid #d5d5d5;
+            cursor: pointer;
+        }
+
+        .color1 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: #b69051;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .color2 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: #2b2929;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .color3 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: ivory;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .color4 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .color5 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: lightpink;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .color6 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: brown;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .color7 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: lightgreen;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .color8 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: purple;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .color9 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: pink;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .color10 {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background-color: cornflowerblue;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .left_box {
+            position: absolute;
+            width: 90px;
+            color: black;
+            font-size: 14px;
+            font-family: Ygodic330;
+        }
+
+        .right_box {
+            position: absolute;
+            margin-left: 95px;
+            width: 150px;
+            color: #979797;
+            font-size: 14px;
+            font-family: Ygodic330;
+        }
+
+            .right_box > p {
+                color: black;
+                display: inline-block;
+            }
+
+        .men_box {
+            width: 399px;
+            height: 768px;
+            position: relative;
+            float: left;
+            display: block;
+            background-color: #eaeaea;
+        }
+
+        .men_right {
+            position: relative;
+            width: 372px;
+            height: 768px;
+            float: right;
+            background-color: white;
+        }
+
+            .men_right > b2 {
+                position: relative;
+                display: block;
+                margin-top: 27px;
+                margin-left: 44px;
+                font-family: Ygodic310;
+                font-size: 30px;
+            }
+
+
+
+        html {
+            width: 1920px;
+            height: 7492px;
+            background-image: url("image/background/background.png");
+            overflow-x: hidden !important;
+            overflow:auto;
+        }
+
+        .poeple1_24 {
+            width: 100px;
+            height: 216px;
+            background: url("image/ani/test.png") no-repeat top center;
+            position: relative;
+            z-index: 9;
+            top: 650px;
+            left: 600px;
+            cursor: pointer;
+        }
+
+        .people1 {
+            width: 80px;
+            height: 241.7px;
+            background: url("image/ani/girl.png") no-repeat top center;
+            position: absolute;
+            z-index: 9;
+            top: 480px;
+            left: 350px;
+        }
+
+
+        .boy {
+            width: 150px;
+            height: 297px;
+            background: url("image/ani/boy1.png") no-repeat top center;
+            position: absolute;
+            z-index: 99;
+            top: 3000px;
+            left: 1400px;
+        }
+
+        .people2 {
+            width: 100px;
+            height: 218px;
+            background: url("image/ani/girl1.png") no-repeat top center;
+            position: absolute;
+            z-index: 9;
+            top: 860px;
+            left: 1230px;
+            cursor: pointer;
+        }
+
+        .people3 {
+            width: 80px;
+            height: 241.7px;
+            background: url("image/ani/girl2.png") no-repeat top center;
+            position: absolute;
+            z-index: 9;
+            top: 3200px;
+            left: 300px;
+        }
+
+
+
+        .people4 {
+            width: 80px;
+            height: 241.7px;
+            background: url("image/ani/girl3.png") no-repeat top center;
+            position: absolute;
+            z-index: 9;
+            top: 2250px;
+            left: 770px;
+            cursor: pointer;
+        }
+
+        .people5 {
+            width: 152px;
+            height: 309.7px;
+            background: url("image/ani/girl5.png") no-repeat top center;
+            position: absolute;
+            z-index: 9;
+            top: 4900px;
+            left: 770px;
+        }
+
+        .people6 {
+            width: 152px;
+            height: 309.7px;
+            background: url("image/ani/girl6.png") no-repeat top center;
+            position: absolute;
+            z-index: 9;
+            top: 6500px;
+            left: 1100px;
+        }
+
+        .event1 {
+            position: absolute;
+            background: url("image/background/event1.png") no-repeat top center;
+            top: 1600px;
+            left: -1000px;
+            width: 670px;
+            height: 720px;
+            display: block;
+            transition-duration: 1.5s;
+        }
+
+        .event2 {
+            position: absolute;
+            background: url("image/background/event2.png") no-repeat top center;
+            top: 3850px;
+            left: -1000px;
+            width: 524px;
+            height: 783px;
+            display: block;
+            transition-duration: 1.5s;
+        }
+
+        .crayon {
+            width: 154px;
+            height: 130px;
+            background: url("image/char/crayon.png") no-repeat top center;
+            position: absolute;
+            z-index: 9;
+            top: 5120px;
+            left: 1070px;
+            cursor: pointer;
+        }
+
+        .snow {
+            width: 126px;
+            height: 201px;
+            background: url("image/char/snow.png") no-repeat top center;
+            position: absolute;
+            z-index: 9;
+            top: 5380px;
+            left: 1620px;
+            cursor: pointer;
+        }
+
+        .buz {
+            width: 168px;
+            height: 155px;
+            background: url("image/char/buz.png") no-repeat top center;
+            position: absolute;
+            z-index: 9;
+            top: 5250px;
+            left: 760px;
+            cursor: pointer;
+        }
+
+        .pen {
+            width: 128px;
+            height: 207px;
+            background: url("image/char/pen.png") no-repeat top center;
+            position: absolute;
+            z-index: 9;
+            top: 5540px;
+            left: 1370px;
+            cursor: pointer;
+        }
+
+
+
+
+        .click1 {
+            width: 128px;
+            height: 132px;
+            position: relative;
+            z-index: 9;
+            left: 670px;
+            animation-duration: 1s;
+            animation-name: click;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+
+        .click2 {
+            width: 135px;
+            height: 135px;
+            position: relative;
+            z-index: 9;
+            left: 1280px;
+            animation-duration: 1s;
+            animation-name: click2;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        .click4 {
+            width: 128px;
+            height: 129px;
+            position: relative;
+            z-index: 9;
+            left: 1180px;
+            animation-duration: 1s;
+            animation-name: click3;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            cursor: pointer;
+        }
+
+        .click5 {
+            width: 128px;
+            height: 128px;
+            position: relative;
+            z-index: 9;
+            left: 1700px;
+            animation-duration: 1s;
+            animation-name: click4;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            cursor: pointer;
+        }
+
+        .click6 {
+            width: 140px;
+            height: 144px;
+            position: relative;
+            z-index: 9;
+            left: 820px;
+            animation-duration: 1s;
+            animation-name: click5;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            cursor: pointer;
+        }
+
+        .click7 {
+            width: 128px;
+            height: 129px;
+            position: relative;
+            z-index: 9;
+            left: 880px;
+            animation-duration: 1s;
+            animation-name: click6;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        .click8 {
+            width: 128px;
+            height: 128px;
+            position: relative;
+            z-index: 9;
+            left: 1440px;
+            animation-duration: 1s;
+            animation-name: click7;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        .click9 {
+            width: 127px;
+            height: 130px;
+            position: absolute;
+            z-index: 9;
+            left: 250px;
+            animation-duration: 1s;
+            animation-name: click8;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        .click10 {
+            width: 137px;
+            height: 141px;
+            position: absolute;
+            z-index: 9;
+            left: 1400px;
+            animation-duration: 1s;
+            animation-name: click9;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        @keyframes click8 {
+            from {
+                top: 240px;
+            }
+
+            to {
+                top: 260px;
+            }
+        }
+
+        @keyframes click9 {
+            from {
+                top: 3350px;
+            }
+
+            to {
+                top: 3370px;
+            }
+        }
+
+        @keyframes click {
+            from {
+                top: 280px;
+            }
+
+            to {
+                top: 300px;
+            }
+        }
+
+        @keyframes click2 {
+            from {
+                top: 390px;
+            }
+
+            to {
+                top: 410px;
+            }
+        }
+
+        @keyframes click3 {
+            from {
+                top: 4520px;
+            }
+
+            to {
+                top: 4540px;
+            }
+        }
+
+        @keyframes click4 {
+            from {
+                top: 4680px;
+            }
+
+            to {
+                top: 4700px;
+            }
+        }
+
+        @keyframes click5 {
+            from {
+                top: 1350px;
+            }
+
+            to {
+                top: 1370px;
+            }
+        }
+
+        @keyframes click6 {
+            from {
+                top: 4320px;
+            }
+
+            to {
+                top: 4340px;
+            }
+        }
+
+        @keyframes click7 {
+            from {
+                top: 4460px;
+            }
+
+            to {
+                top: 4480px;
+            }
+        }
+
+
+        .event_page1 {
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%);
+            overflow: auto;
+            width: 1000px;
+            height: 3199px;
+            z-index: 999;
+            display: none;
+        }
+
+            .event_page1 img {
+                width: 1000px;
+                height: 2200px;
+            }
+
+        .event_page2 {
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%);
+            overflow: auto;
+            width: 1000px;
+            height: 3199px;
+            z-index: 999;
+            display: none;
+        }
+
+            .event_page2 img {
+                width: 1000px;
+                height: 2200px;
+            }
+
+            
+        .event_page3 {
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%);
+            overflow: auto;
+            width: 1000px;
+            height: 3199px;
+            z-index: 999;
+            display: none;
+        }
+
+            .event_page3 img {
+                width: 1000px;
+                height: 2200px;
+            }
+
+            .event_page4 {
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%);
+            overflow: auto;
+            width: 1000px;
+            height: 3199px;
+            z-index: 999;
+            display: none;
+        }
+
+            .event_page4 img {
+                width: 1000px;
+                height: 2200px;
+            }
+    </style>
+    <script src="javascript/jquery-3.4.1.min.js"></script>
+    <script src="javascript/script.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="black_box"></div>
+    <div class="spao">
+        <img src="image/background/spao.png" alt="no" />
+        <img src="image/icon/cancel.png" alt="no" />
+    </div>
+
+
+    <div class="event_page1">
+        <img src="image/event/page2.png" alt="no" />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br />
+    </div>
+
+    <div class="event_page2">
+        <img src="image/event/page3.png" alt="no" />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br />
+    </div>
+
+    <div class="event_page3">
+        <img src="image/event/page4.png" alt="no" />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br />
+    </div>
+
+    <div class="event_page4">
+        <img src="image/event/page1.png" alt="no" />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br />
+    </div>
+
+    <div class="men">
+        <img src="image/background/men1_01.png" alt="no" />
+        <div class="men_box">
+            <div class="number_1">
+                <ul>
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                </ul>
+
+                <img src="image/slide/number.png" />
+            </div>
+            <div class="img_slide">
+                <ul class="nav">
+                    <li><img src="image/slide/slide_men1.png" /></li>
+                    <li><img src="image/slide/slide_men2.png" /></li>
+                    <li><img src="image/slide/slide_men3.png" /></li>
+                </ul>
+            </div>
+
+            <div class="circle">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="men_right">
+            <b2>MEN</b2>
+            <div class="close">
+                <img src="image/icon/close.png" />
+            </div>
+            <div class="info">
+                <img src="image/background/info.png" />
+            </div>
+            <div class="info_right">
+                <b3>RECOMMEND</b3><br />
+                <b2>베이직 덤블 집업</b2><br /><br />
+                <p>S ~ XL ( 90 ~ 105 )</p><br /><br />
+                <p>판매가</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b1>59,000</b1><br />&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;원<br /><br /><br />
+                <div class="left_box">
+                    배송비 <br /><br />
+                    발송예정일 <br /><br />
+                    카드혜택<br /><br />
+                    맴버십 포인트
+                </div>
+                <div class="right_box">
+                    무료배송<br /><br />
+                    평균 1일 이내 발송<br /><br />
+                    무이자 할부<br /><br />
+                    <p>60</p>p 적립
+                </div>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <p>색상</p> <div class="text_box">&nbsp;&nbsp;색상 옵션을 선택해 주세요.</div>
+                <div class="none"></div>
+                <div class="color_box">
+                    <div class="color1"></div>
+                </div>
+                <div class="color_box">
+                    <div class="color2"></div>
+                </div>
+                <br />
+                <p>사이즈</p> <div class="text_box">&nbsp;&nbsp;옵션을 선택해 주세요.</div>
+                <div class="none"></div>
+                <div class="size_box">S</div>&nbsp;<div class="size_box">M</div>&nbsp;<div class="size_box">L</div>&nbsp;<div class="size_box">XL</div>
+            </div>
+            <div class="buy">바로 구매</div>
+            <div class="basket"><img src="image/icon/barket.png" /></div>
+            <div class="like"><img src="image/icon/heart.png" /></div>
+            <div class="event_poto"><img src="image/icon/camera.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 포토 리뷰 이벤트</div>
+        </div>
+    </div>
+
+    <div class="women">
+        <img src="image/background/women1_01.png" alt="no" />
+        <div class="men_box">
+            <div class="number_1">
+                <ul>
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                </ul>
+
+                <img src="image/slide/number.png" />
+            </div>
+            <div class="img_slide">
+                <ul class="nav">
+                    <li><img src="image/slide/slide_women1.png" /></li>
+                    <li><img src="image/slide/slide_women2.png" /></li>
+                    <li><img src="image/slide/slide_women3.png" /></li>
+                </ul>
+            </div>
+
+            <div class="circle">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="men_right">
+            <b2>WOMEN</b2>
+            <div class="close">
+                <img src="image/icon/close.png" />
+            </div>
+            <div class="info">
+                <img src="image/background/info.png" />
+            </div>
+            <div class="info_right">
+                <b3>RECOMMEND</b3><br />
+                <b2>수피마 반팔 티셔츠 크루넥</b2><br /><br />
+                <p>S ~ XL ( 90 ~ 105 )</p><br /><br />
+                <p>판매가</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b1>9,900</b1><br />&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;원<br /><br /><br />
+                <div class="left_box">
+                    배송비 <br /><br />
+                    발송예정일 <br /><br />
+                    카드혜택<br /><br />
+                    맴버십 포인트
+                </div>
+                <div class="right_box">
+                    무료배송<br /><br />
+                    평균 1일 이내 발송<br /><br />
+                    무이자 할부<br /><br />
+                    <p>60</p>p 적립
+                </div>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <p>색상</p> <div class="text_box">&nbsp;&nbsp;색상 옵션을 선택해 주세요.</div>
+                <div class="none"></div>
+                <div class="color_box">
+                    <div class="color3"></div>
+                </div>
+                <div class="color_box">
+                    <div class="color4"></div>
+                </div>
+                <div class="color_box">
+                    <div class="color5"></div>
+                </div>
+                <div class="color_box">
+                    <div class="color6"></div>
+                </div>
+                <div class="color_box">
+                    <div class="color7"></div>
+                </div>
+                <div class="color_box">
+                    <div class="color8"></div>
+                </div>
+                <br />
+                <p>사이즈</p> <div class="text_box">&nbsp;&nbsp;옵션을 선택해 주세요.</div>
+                <div class="none"></div>
+                <div class="size_box">S</div>&nbsp;<div class="size_box">M</div>&nbsp;<div class="size_box">L</div>&nbsp;<div class="size_box">XL</div>
+            </div>
+            <div class="buy">바로 구매</div>
+            <div class="basket"><img src="image/icon/barket.png" /></div>
+            <div class="like"><img src="image/icon/heart.png" /></div>
+            <div class="event_poto"><img src="image/icon/camera.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 포토 리뷰 이벤트</div>
+        </div>
+    </div>
+
+    <div class="bag">
+        <img src="image/background/bag_01.png" alt="no" />
+        <div class="men_box">
+            <div class="number_1">
+                <ul>
+                    <li>01</li>
+                    <li>02</li>
+                    <li>03</li>
+                </ul>
+
+                <img src="image/slide/number.png" />
+            </div>
+            <div class="img_slide">
+                <ul class="nav">
+                    <li><img src="image/slide/slide_bag1.png" /></li>
+                    <li><img src="image/slide/slide_bag3.png" /></li>
+                    <li><img src="image/slide/slide_bag2.png" /></li>
+                </ul>
+            </div>
+
+            <div class="circle">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="men_right">
+            <b2>BAG</b2>
+            <div class="close">
+                <img src="image/icon/close.png" />
+            </div>
+            <div class="info">
+                <img src="image/background/info2.png" />
+            </div>
+            <div class="info_right">
+                <b3>RECOMMEND</b3><br />
+                <b2>사각 미니 크로스백</b2><br /><br />
+                <p>FREE</p><br /><br />
+                <p>판매가</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b1>14,950</b1><br />&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;원<br /><br /><br />
+                <div class="left_box">
+                    배송비 <br /><br />
+                    발송예정일 <br /><br />
+                    카드혜택<br /><br />
+                    맴버십 포인트
+                </div>
+                <div class="right_box">
+                    무료배송<br /><br />
+                    평균 1일 이내 발송<br /><br />
+                    무이자 할부<br /><br />
+                    <p>60</p>p 적립
+                </div>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <p>색상</p> <div class="text_box">&nbsp;&nbsp;색상 옵션을 선택해 주세요.</div>
+                <div class="none"></div>
+                <div class="color_box">
+                    <div class="color9"></div>
+                </div>
+                <div class="color_box">
+                    <div class="color4"></div>
+                </div>
+                <div class="color_box">
+                    <div class="color10"></div>
+                </div>
+                <br />
+
+            </div>
+            <div class="buy">바로 구매</div>
+            <div class="basket"><img src="image/icon/barket.png" /></div>
+            <div class="like"><img src="image/icon/heart.png" /></div>
+            <div class="event_poto"><img src="image/icon/camera.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 포토 리뷰 이벤트</div>
+        </div>
+    </div>
+
+
+
+    <div class="poeple1_24">
+    </div>
+
+    <div class="people1"></div>
+
+    <div class="people2"></div>
+
+    <div class="people3"></div>
+
+    <div class="people4"></div>
+
+    <div class="people5"></div>
+
+    <div class="people6"></div>
+
+    <div class="boy"></div>
+
+    <div class="event1"></div>
+
+    <div class="event2"></div>
+
+    <div class="click1">
+        <img src="image/click/click1.png" alt="no" />
+    </div>
+
+    <div class="click2">
+        <img src="image/click/click2.png" alt="no" />
+    </div>
+    <div class="click4">
+        <img src="image/click/click3.png" alt="no" />
+    </div>
+
+    <div class="click5">
+        <img src="image/click/click5.png" alt="no" />
+    </div>
+    <div class="click6">
+        <img src="image/click/click4.png" alt="no" />
+    </div>
+
+    <div class="click7">
+        <img src="image/click/click6.png" alt="no" />
+    </div>
+
+    <div class="click8">
+        <img src="image/click/click7.png" alt="no" />
+    </div>
+
+    <div class="click9">
+        <img src="image/click/click8.png" alt="no" />
+    </div>
+
+    <div class="click10">
+        <img src="image/click/click9.png" alt="no" />
+    </div>
+
+
+
+    <div class="crayon">
+    </div>
+    <div class="snow"></div>
+    <div class="buz"></div>
+    <div class="pen"></div>
+
+
+</body>
+</html>
